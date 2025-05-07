@@ -55,7 +55,7 @@ async def read_hosts():
         raw_servers = read_servers_from_host_file(pathlib.Path(host_file_path))
         servers = [server.split('.')[0] for server in raw_servers]
         servers.sort()
-        return {'servers': servers}
+        return {'linux_servers': servers}
     except Exception as exception:
         print(f"Unable to read {host_file_path}", file=sys.stderr)
         print(repr(exception), file=sys.stderr)
